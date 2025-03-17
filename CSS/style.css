@@ -1,0 +1,154 @@
+/* Base Typography and Layout */
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Skip to Main - Accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #FFCB05;
+    color: #00274C;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    z-index: 1000;
+    text-decoration: none;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+  
+  /* Header */
+  header {
+    background-color: #00274C;
+    color: white;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+  header img {
+    max-width: 100%;
+    height: auto;
+  }
+  header h1 {
+    font-size: 1.25rem;
+    margin: 1rem 0 0.5rem 0;
+    color: white;
+  }
+  
+  /* Navigation */
+  nav {
+    margin-bottom: 1rem;
+  }
+  nav ul {
+    list-style: none;
+    margin: 1rem 0 0 0;
+    padding: 0 1rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+  nav li a {
+    display: block;
+    background-color: #004C8C;
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  nav li a:hover {
+    background-color: #005fa3;
+  }
+  nav li a[aria-current="page"] {
+    background-color: #FFCB05;
+    color: #00274C;
+  }
+  
+  /* Main Layout */
+  main {
+    padding: 1rem 1.25rem;
+  }
+  
+  /* Grid Layout for Cards */
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  /* Card Style */
+  .card {
+    background-color: #f8f8f8;
+    padding: 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+  }
+  .card h2, .card h3 {
+    color: #00274C;
+    margin-top: 0.5rem;
+  }
+  .card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .card ul,
+  .card ol {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .card li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 1.25rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+  
+  /* Link Styling */
+  a {
+    color: #004C8C;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Reduce Motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  
+  /* Unified Logo Styling */
+  .logo {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 150px;
+    height: 100px;
+    object-fit: contain; 
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+  }

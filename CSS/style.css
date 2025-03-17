@@ -65,6 +65,7 @@ body {
   }
   nav li a:hover {
     background-color: #005fa3;
+    cursor: pointer;
   }
   nav li a[aria-current="page"] {
     background-color: #FFCB05;

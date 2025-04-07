@@ -86,7 +86,19 @@
   </main>
 
   <footer>
-    <p>© 2025 University of Michigan — <a href="https://mbc.studentlife.umich.edu/">Maize & Blue Cupboard Website</a></p>
+    <p>© <span id="year"></span> University of Michigan — <a href="https://mbc.studentlife.umich.edu/">Maize & Blue Cupboard Website</a></p>
   </footer>
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    cards.forEach(card => observer.observe(card));
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>  
 </body>
 </html>

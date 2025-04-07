@@ -1,13 +1,14 @@
 /* Base Typography and Layout */
 body {
-    font-family: sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #000000;
-  }
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  position: relative; 
+  z-index: 0; 
+}
   
   /* Skip to Main - Accessibility */
   .skip-link {
@@ -153,3 +154,151 @@ body {
     padding: 0.5rem;
     border-radius: 6px;
   }
+
+
+  @media (min-width: 768px) {
+    /* Change grid layout to 4 columns on tablet/desktop */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+  
+    /* Horizontally align navigation items */
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+  
+    /* Increase header font size */
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    /* Add more padding around main content */
+    main {
+      padding: 2rem 3rem;
+    }
+  }
+
+   /* Background gradient animation – all screen sizes (except 404) */
+body:not(.error-page) {
+  background: linear-gradient(-45deg, #ece9e6, #ffffff, #dbeaff);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+/* Keyframes for animated background */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Only for tablet/desktop screens: blurred illustration (except 404) */
+@media (min-width: 768px) {
+  body:not(.error-page)::before {
+    content: "";
+    background: url("../images/background.png") center/cover no-repeat;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    opacity: 0.15;
+    filter: blur(2px);
+  }
+}
+
+
+
+  .card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border: 2px solid #004C8C;
+    transition: all 0.3s ease-in-out;
+  }
+  
+
+  .card {
+    border: 2px solid transparent;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+  }
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .not-found {
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  .error-code {
+    font-size: 5rem;
+    color: #00274C;
+  }
+  .error-msg {
+    font-size: 1.5rem;
+    color: #444;
+    margin-top: 1rem;
+  }
+  .home-button {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: #00274C;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .home-button:hover {
+    background-color: #004C8C;
+  }
+  
+ /* 404 Error Page */
+
+ /* 404 Page 스타일 */
+.error-page {
+  background-color: #FDE7A7; /* 부드러운 노란 배경 */
+  height: 100vh;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.error-page h1 {
+  font-size: 5rem;
+  color: #00274C;
+  margin-bottom: 1rem;
+}
+
+.error-page .error-img {
+  width: 220px; /* 이미지 더 키움 */
+  height: auto;
+  margin-bottom: 1.25rem;
+}
+
+.error-page p {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.error-page .btn {
+  background-color: #00274C;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.error-page .btn:hover {
+  background-color: #004C8C;
+}
